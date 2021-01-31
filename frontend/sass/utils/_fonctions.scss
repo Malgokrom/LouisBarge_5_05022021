@@ -1,0 +1,7 @@
+@function decalClarte ($couleur, $decalage) {
+    @if (lightness($couleur) < 50%) {
+        @return lighten($couleur, $decalage);
+    } @else {
+        @return darken($couleur, $decalage);
+    }
+}

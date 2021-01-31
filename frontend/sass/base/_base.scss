@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "roboto-regular";
+    src: url("./polices/Roboto/Roboto-Regular.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    &:focus {
+        background-color: $couleur-bg-focus;
+        outline: 3px solid $couleur-bordure-focus;
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: $couleur-bg-page;
+    color: $couleur-txt-page;
+    font-family: "roboto-regular";
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+figure {
+    line-height: 0;
+}
