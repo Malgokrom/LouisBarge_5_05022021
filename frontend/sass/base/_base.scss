@@ -1,6 +1,6 @@
 @font-face {
     font-family: "roboto-regular";
-    src: url("./polices/Roboto/Roboto-Regular.ttf");
+    src: url("../polices/Roboto/Roboto-Regular.ttf");
 }
 
 * {
@@ -22,6 +22,17 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
+}
+
+a {
+    color: $couleur-lien;
+    text-decoration: none;
+    &:hover {
+        font-style: italic;
+    }
+    &:visited {
+        color: $couleur-lien-visited;
+    }
 }
 
 figure {

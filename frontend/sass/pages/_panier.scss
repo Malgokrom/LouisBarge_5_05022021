@@ -1,0 +1,12 @@
+.form-panier {
+    &__table {
+        td:nth-child(1) {
+            text-align: right;
+            padding-right: 10px;
+        }
+    }
+    &__btn {
+        display: block;
+        margin: 20px auto;
+    }
+}

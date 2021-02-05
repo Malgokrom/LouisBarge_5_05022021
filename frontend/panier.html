@@ -23,7 +23,33 @@
         <div id="contenu">
             <!-- MAIN -->
             <main>
-                
+                <h1>Gérez votre panier</h1>
+                <!-- JS : tableau panier avec noms des produits, quantité, prix, bouton de suppression du produit et total -->
+                <form class="form-panier">
+                    <table class="form-panier__table">
+                        <tr>
+                            <td><label for="nom">Nom :</label></td>
+                            <td><input type="text" name="nom" id="nom" required /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="prenom">Prénom :</label></td>
+                            <td><input type="text" name="prenom" id="prenom" required /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="adresse">Adresse :</label></td>
+                            <td><input type="text" name="adresse" id="adresse" required /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="ville">Ville :</label></td>
+                            <td><input type="text" name="ville" id="ville" required /></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">Email :</label></td>
+                            <td><input type="email" name="email" id="email" required /></td>
+                        </tr>
+                    </table>
+                    <button class="form-panier__btn" type="submit">Commander</button>
+                </form>
             </main>
         </div>
 

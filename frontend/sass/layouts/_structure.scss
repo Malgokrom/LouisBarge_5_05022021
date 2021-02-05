@@ -9,6 +9,7 @@ header {
         margin: 0;
         img {
             width: 100%;
+            max-width: 500px;
         }
     }
     nav {
@@ -35,6 +36,7 @@ header {
                         color: $couleur-txt-nav;
                     }
                     &:hover {
+                        font-style: normal;
                         &::after {
                             opacity: 1;
                         }
@@ -54,10 +56,15 @@ header {
     }
 }
 
-/* MAIN */
 #contenu {
     flex-grow: 1;
-    padding: 20px;
+    padding: 0 20px;
+    /* MAIN */
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /* FOOTER */

@@ -23,7 +23,35 @@
         <div id="contenu">
             <!-- MAIN -->
             <main>
-                
+                <h1><!-- JS : nom du produit --></h1>
+                <div class="infos-produit">
+                    <figure class="infos-produit__image" id="image-produit">
+                        <!-- JS : image du produit -->
+                    </figure>
+                    <table class="infos-produit__table">
+                        <tr>
+                            <td>Nom :</td>
+                            <td id="nom-produit"><!-- JS : nom du produit --></td>
+                        </tr>
+                        <tr>
+                            <td>Prix :</td>
+                            <td id="prix-produit"><!-- JS : prix du produit --></td>
+                        </tr>
+                        <tr>
+                            <td>Description :</td>
+                            <td id="description-produit"><!-- JS : description du produit --></td>
+                        </tr>
+                    </table>
+                </div>
+                <form class="form-ajout">
+                    <p class="form-ajout__custom">
+                        <label for="custom">Personnalisation :</label>
+                        <select name="custom" id="custom">
+                            <!-- JS : liste déroulante pour les choix de personnalisation -->
+                        </select>
+                    </p>
+                    <button class="form-ajout__btn">Ajouter au panier</button>
+                </form>
             </main>
         </div>
 

@@ -1,0 +1,11 @@
+.infos-produit {
+    display: flex;
+    flex-wrap: wrap;
+    &__image {
+        background-color: red;
+        margin: 0 50px 0 0;
+        img {
+            max-width: $largeur-max-img-produit;
+        }
+    }
+}
