@@ -1,4 +1,9 @@
-.form-panier {
+.panier {
+    display: none;
+    margin-bottom: 30px;
+}
+
+.form-commande {
     &__table {
         td:nth-child(1) {
             text-align: right;

@@ -24,9 +24,15 @@
             <!-- MAIN -->
             <main>
                 <h1>Gérez votre panier</h1>
-                <!-- JS : tableau panier avec id, nom, prix, bouton de suppression et total -->
-                <form class="form-panier">
-                    <table class="form-panier__table">
+                <div class="panier">
+                    <table class="panier__table">
+                        <caption>Récapitulatif de votre commande</caption>
+                        <!-- JS : tableau panier avec id, nom, prix, bouton de suppression et total -->
+                    </table>
+                    <button class="panier__reset">Vider le panier</button>
+                </div>
+                <form class="form-commande">
+                    <table class="form-commande__table">
                         <tr>
                             <td><label for="nom">Nom :</label></td>
                             <td><input type="text" name="nom" id="nom" required /></td>
@@ -48,7 +54,7 @@
                             <td><input type="email" name="email" id="email" required /></td>
                         </tr>
                     </table>
-                    <button class="form-panier__btn" type="submit">Commander</button>
+                    <button class="form-commande__btn" type="submit">Commander</button>
                 </form>
             </main>
         </div>
@@ -59,5 +65,9 @@
                 Orinoco 2021 - Tous droits réservés
             </p>
         </footer>
+
+        <!-- JAVASCRIPT -->
+        <script src="js/fonctions.js"></script>
+        <script src="js/panier.js"></script>
     </body>
 </html>

@@ -13,11 +13,19 @@ fetch('http://localhost:3000/api/teddies/' + id).then((data) => {
     alert(erreur);
 /* Traitement des données */
 }).then((json) => {
+    /* Ajout du produit au panier */
+    let btn_ajout = document.getElementById('btn-ajout');
+    btn_ajout.addEventListener('click', () => {
+        ajoutPanier(json['_id'], json['name'], json['price']);
+    });
+
+    /* Remplissage des éléments HTML */
     document.querySelector('h1').innerHTML = json['name'];
     document.getElementById('nom-produit').innerHTML = json['name'];
     document.getElementById('prix-produit').innerHTML = formatPrix(json['price']);
     document.getElementById('description-produit').innerHTML = json['description'];
     
+    /* Chargement des images */
     let image_produit = document.getElementById('image-produit');
     image_produit.innerHTML = '<img src="' + json['imageUrl'] + '" alt="' + json['description'] + '" />';
     let image_fullscreen = document.querySelector('.image-fullscreen');
@@ -25,7 +33,7 @@ fetch('http://localhost:3000/api/teddies/' + id).then((data) => {
     let image_fullscreen_fermer = document.querySelector('.image-fullscreen__fermer');
     let image_fullscreen_produit = document.querySelector('.image-fullscreen__produit');
     
-    /* Gestion de l'affichage en mode plain écran */
+    /* Gestion de l'affichage en mode plein écran */
     image_produit.addEventListener('click', () => {
         image_fullscreen.style.display = 'flex';
     });
@@ -58,15 +66,4 @@ fetch('http://localhost:3000/api/teddies/' + id).then((data) => {
         liste_options += '<option value="' + i + '">' + tab_couleurs[i] + '</option>';
     }
     custom.innerHTML = liste_options;
-
-    /* Ajout du produit au panier */
-    let btn_ajout = document.getElementById('btn-ajout');
-    btn_ajout.addEventListener('click', () => {
-        ajoutPanier(json['_id'], json['name'], json['price']);
-    });
-    btn_ajout.addEventListener('keyup', (e) => {
-        if (e.key === 'Enter') {
-            ajoutPanier(json['_id'], json['name'], json['price']);
-        }
-    });
 });

@@ -247,11 +247,16 @@ footer p {
   right: 25px;
 }
 
-.form-panier__table td:nth-child(1) {
+.panier {
+  display: none;
+  margin-bottom: 30px;
+}
+
+.form-commande__table td:nth-child(1) {
   text-align: right;
   padding-right: 10px;
 }
-.form-panier__btn {
+.form-commande__btn {
   display: block;
   margin: 20px auto;
 }
