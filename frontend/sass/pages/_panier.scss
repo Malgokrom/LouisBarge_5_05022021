@@ -1,11 +1,32 @@
 .panier {
     display: none;
     margin-bottom: 30px;
+    &__table {
+        border-collapse: collapse;
+        td {
+            padding: 10px;
+            border: 2px solid black;
+        }
+        td:last-child {
+            padding: 5px;
+            border: none;
+        }
+        button {
+            display: block;
+            background-color: transparent;
+            background-image: url("../img/trash-alt-solid.svg");
+            width: 21px;
+            height: 24px;
+            border: none;
+            cursor: pointer;
+        }
+    }
 }
 
 .form-commande {
+    display: none;
     &__table {
-        td:nth-child(1) {
+        td:first-child {
             text-align: right;
             padding-right: 10px;
         }

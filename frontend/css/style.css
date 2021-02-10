@@ -251,8 +251,31 @@ footer p {
   display: none;
   margin-bottom: 30px;
 }
+.panier__table {
+  border-collapse: collapse;
+}
+.panier__table td {
+  padding: 10px;
+  border: 2px solid black;
+}
+.panier__table td:last-child {
+  padding: 5px;
+  border: none;
+}
+.panier__table button {
+  display: block;
+  background-color: transparent;
+  background-image: url("../img/trash-alt-solid.svg");
+  width: 21px;
+  height: 24px;
+  border: none;
+  cursor: pointer;
+}
 
-.form-commande__table td:nth-child(1) {
+.form-commande {
+  display: none;
+}
+.form-commande__table td:first-child {
   text-align: right;
   padding-right: 10px;
 }

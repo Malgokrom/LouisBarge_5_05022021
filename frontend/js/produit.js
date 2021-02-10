@@ -16,7 +16,9 @@ fetch('http://localhost:3000/api/teddies/' + id).then((data) => {
     /* Ajout du produit au panier */
     let btn_ajout = document.getElementById('btn-ajout');
     btn_ajout.addEventListener('click', () => {
-        ajoutPanier(json['_id'], json['name'], json['price']);
+        if (localStorage.getItem(json['_id']) === null) {
+            localStorage.setItem(json['_id'], json['name'] + ';' + json['price'])
+        }
     });
 
     /* Remplissage des éléments HTML */
