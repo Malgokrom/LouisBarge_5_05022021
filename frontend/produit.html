@@ -25,33 +25,35 @@
             <main>
                 <h1><!-- JS : nom du produit --></h1>
                 <div class="infos-produit">
-                    <figure class="infos-produit__image" id="image-produit">
+                    <figure class="infos-produit__image" id="image-produit" tabindex="0">
                         <!-- JS : image du produit -->
                     </figure>
-                    <table class="infos-produit__table">
-                        <tr>
-                            <td>Nom :</td>
-                            <td id="nom-produit"><!-- JS : nom du produit --></td>
-                        </tr>
-                        <tr>
-                            <td>Prix :</td>
-                            <td id="prix-produit"><!-- JS : prix du produit --></td>
-                        </tr>
-                        <tr>
-                            <td>Description :</td>
-                            <td id="description-produit"><!-- JS : description du produit --></td>
-                        </tr>
-                    </table>
+                    <div class="infos-produit__texte">
+                        <table>
+                            <tr>
+                                <td>Nom&nbsp;:</td>
+                                <td id="nom-produit"><!-- JS : nom du produit --></td>
+                            </tr>
+                            <tr>
+                                <td>Prix&nbsp;:</td>
+                                <td id="prix-produit"><!-- JS : prix du produit --></td>
+                            </tr>
+                            <tr>
+                                <td>Description&nbsp;:</td>
+                                <td id="description-produit"><!-- JS : description du produit --></td>
+                            </tr>
+                        </table>
+                        <div>
+                            <p>
+                                <label for="custom">Couleur&nbsp;:</label>
+                                <select name="custom" id="custom">
+                                    <!-- JS : liste déroulante pour les choix de personnalisation -->
+                                </select>
+                            </p>
+                            <button id="btn-ajout">Ajouter au panier</button>
+                        </div>
+                    </div>
                 </div>
-                <form class="form-ajout">
-                    <p class="form-ajout__custom">
-                        <label for="custom">Personnalisation :</label>
-                        <select name="custom" id="custom">
-                            <!-- JS : liste déroulante pour les choix de personnalisation -->
-                        </select>
-                    </p>
-                    <button class="form-ajout__btn">Ajouter au panier</button>
-                </form>
             </main>
         </div>
 
@@ -61,5 +63,14 @@
                 Orinoco 2021 - Tous droits réservés
             </p>
         </footer>
+
+        <!-- Affichage de l'image en plein écran -->
+        <figure class="image-fullscreen">
+            <img class="image-fullscreen__fermer" src="img/times-circle-regular.svg" alt="Quitter le mode plein écran" tabindex="0" />
+        </figure>
+        
+        <!-- JAVASCRIPT -->
+        <script src="js/fonctions.js"></script>
+        <script src="js/produit.js"></script>
     </body>
 </html>

@@ -46,17 +46,14 @@ $index-epaisseur-bordure: 5px;
                 color: #000000;
                 font-style: normal;
                 font-weight: bold;
+                white-space: nowrap;
                 padding: 20px;
                 margin: 0;
                 border-top: 5px solid #404040;
                 transition: all 300ms;
-                .centimes {
-                    font-size: 0.9em;
-                }
             }
             p:nth-child(1) {
                 flex-grow: 1;
-                white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 padding-right: 0;
