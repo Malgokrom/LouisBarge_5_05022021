@@ -13,12 +13,26 @@ fetch('http://localhost:3000/api/teddies/' + id).then((data) => {
     alert(erreur);
 /* Traitement des données */
 }).then((json) => {
+    /* Ajout des options de personnalisation */
+    let custom = document.getElementById('custom');
+    let tab_couleurs = json['colors'];
+    let nb_couleurs = tab_couleurs.length;
+    let liste_options = '';
+    for (let i = 0; i < nb_couleurs; i++) {
+        liste_options += '<option value="' + tab_couleurs[i] + '">' + tab_couleurs[i] + '</option>';
+    }
+    custom.innerHTML = liste_options;
+    let couleur = tab_couleurs[0];
+    custom.addEventListener('change', () => {
+        couleur = custom.value;
+    });
+
     /* Ajout du produit au panier */
     let btn_ajout = document.getElementById('btn-ajout');
+    let index_storage;
     btn_ajout.addEventListener('click', () => {
-        if (localStorage.getItem(json['_id']) === null) {
-            localStorage.setItem(json['_id'], json['name'] + ';' + json['price'])
-        }
+        index_storage = localStorage.length.toString();
+        localStorage.setItem(index_storage, json['_id'] + ';' + json['name'] + ';' + couleur + ';' + json['price']);
     });
 
     /* Remplissage des éléments HTML */
@@ -58,14 +72,4 @@ fetch('http://localhost:3000/api/teddies/' + id).then((data) => {
     image_fullscreen_produit.addEventListener('click', (e) => {
         e.stopPropagation();
     });
-
-    /* Ajout des options de personnalisation */
-    let custom = document.getElementById('custom');
-    let tab_couleurs = json['colors'];
-    let nb_couleurs = tab_couleurs.length;
-    let liste_options = '';
-    for (let i = 0; i < nb_couleurs; i++) {
-        liste_options += '<option value="' + i + '">' + tab_couleurs[i] + '</option>';
-    }
-    custom.innerHTML = liste_options;
 });

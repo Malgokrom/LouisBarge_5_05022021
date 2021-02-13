@@ -247,9 +247,32 @@ footer p {
   right: 25px;
 }
 
+#bloc {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.form-commande {
+  display: none;
+  margin: 10px 30px;
+}
+.form-commande__table td:first-child {
+  text-align: right;
+  padding-right: 10px;
+}
+.form-commande__btn {
+  display: block;
+  margin: 20px auto;
+}
+
 .panier {
   display: none;
-  margin-bottom: 30px;
+  margin: 10px 30px;
+}
+.panier__reset {
+  display: block;
+  margin: 0 auto 10px auto;
 }
 .panier__table {
   border-collapse: collapse;
@@ -259,7 +282,7 @@ footer p {
   border: 2px solid black;
 }
 .panier__table td:last-child {
-  padding: 5px;
+  padding: 0 0 0 10px;
   border: none;
 }
 .panier__table button {
@@ -271,17 +294,9 @@ footer p {
   border: none;
   cursor: pointer;
 }
-
-.form-commande {
-  display: none;
-}
-.form-commande__table td:first-child {
-  text-align: right;
-  padding-right: 10px;
-}
-.form-commande__btn {
-  display: block;
-  margin: 20px auto;
+.panier__total {
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
 .infos-commande td:nth-child(1) {

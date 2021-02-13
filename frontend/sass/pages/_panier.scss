@@ -1,6 +1,31 @@
+#bloc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-commande {
+    display: none;
+    margin: 10px 30px;
+    &__table {
+        td:first-child {
+            text-align: right;
+            padding-right: 10px;
+        }
+    }
+    &__btn {
+        display: block;
+        margin: 20px auto;
+    }
+}
+
 .panier {
     display: none;
-    margin-bottom: 30px;
+    margin: 10px 30px;
+    &__reset {
+        display: block;
+        margin: 0 auto 10px auto;
+    }
     &__table {
         border-collapse: collapse;
         td {
@@ -8,7 +33,7 @@
             border: 2px solid black;
         }
         td:last-child {
-            padding: 5px;
+            padding: 0 0 0 10px;
             border: none;
         }
         button {
@@ -21,18 +46,8 @@
             cursor: pointer;
         }
     }
-}
-
-.form-commande {
-    display: none;
-    &__table {
-        td:first-child {
-            text-align: right;
-            padding-right: 10px;
-        }
-    }
-    &__btn {
-        display: block;
-        margin: 20px auto;
+    &__total {
+        font-weight: bold;
+        font-size: 1.2em;
     }
 }
