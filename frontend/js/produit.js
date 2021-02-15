@@ -29,10 +29,20 @@ fetch('http://localhost:3000/api/teddies/' + id).then((data) => {
 
     /* Ajout du produit au panier */
     let btn_ajout = document.getElementById('btn-ajout');
-    let index_storage;
     btn_ajout.addEventListener('click', () => {
-        index_storage = localStorage.length.toString();
-        localStorage.setItem(index_storage, json['_id'] + ';' + json['name'] + ';' + couleur + ';' + json['price']);
+        if (localStorage.getItem('panier') === null) {
+            localStorage.setItem('panier', '{"produits":[]}');
+        }
+        let panier = JSON.parse(localStorage.getItem('panier'));
+        let new_prod = {
+            id: json['_id'],
+            nom: json['name'],
+            perso: couleur,
+            prix: json['price'],
+            description: json['description']
+        };
+        panier.produits.push(new_prod);
+        localStorage.setItem('panier', JSON.stringify(panier));
     });
 
     /* Remplissage des éléments HTML */
