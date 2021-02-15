@@ -1,3 +1,4 @@
+/* Eléments HTML */
 let panier = document.querySelector('.panier');
 let panier_reset = document.querySelector('.panier__reset');
 let panier_table = document.querySelector('.panier__table');
@@ -34,7 +35,6 @@ if (localStorage.getItem('panier') !== null) {
             liste_produits[i].innerHTML = '<td>' + prod_nom + '</td><td>' + prod_perso + '</td><td>' + formatPrix(prod_prix) + '</td><td><button></button></td>';
             panier_table.appendChild(liste_produits[i]);
 
-            /* ERREUR */
             /* Suppression d'un élément du panier */
             btn_suppr[i] = liste_produits[i].getElementsByTagName('button')[0];
             btn_suppr[i].addEventListener('click', () => {
@@ -65,31 +65,48 @@ if (localStorage.getItem('panier') !== null) {
         form_commande.style.display = 'block';
 
         /* Envoi du formulaire */
-        /*form_commande_btn.addEventListener('click', (e) => {
+        form_commande_btn.addEventListener('click', (e) => {
             e.preventDefault();
-            let champ_nom = document.getElementById('nom');
-            let champ_prenom = document.getElementById('prenom');
-            let champ_adresse = document.getElementById('adresse');
-            let champ_ville = document.getElementById('ville');
-            let champ_email = document.getElementById('email');
-            let contact = {
-                firstName: champ_prenom.value,
-                lastName: champ_nom.value,
-                address: champ_adresse.value,
-                city: champ_ville.value,
-                email: champ_email.value
+            
+            /* Objet de contact */
+            let user = {
+                firstName: document.getElementById('prenom').value,
+                lastName: document.getElementById('nom').value,
+                address: document.getElementById('adresse').value,
+                city: document.getElementById('ville').value,
+                email: document.getElementById('email').value
             }
-            let objet_post = {contact, products};
+
+            /* Tableau d'ID de produits */
+            let tab_id = [];
+            c = commande.produits.length;
+            for (let i = 0; i < c; i++) {
+                if (commande.produits[i] !== null) {
+                    tab_id.push(commande.produits[i].id);
+                }
+            }
+
+            /* Envoi de la requête de commande */
             fetch('http://localhost:3000/api/teddies/order', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(contact, products)
+                body: JSON.stringify({
+                    contact: user,
+                    products: tab_id
+                })
             }).then((data) => {
-                console.log(data);
+                if (data.ok) {
+                    return data.json();
+                }
+                throw 'Erreur ' + data.status;
+            }).catch((erreur) => {
+                alert(erreur);
+            }).then((json) => {
+                window.location = 'confirmation_commande.html?orderid=' + json.orderId + '&total=' + prix_total;
             });
-        });*/
+        });
     } else {
         panier.innerHTML = 'Votre panier est vide.';
     }
