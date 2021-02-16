@@ -1,6 +1,11 @@
 @font-face {
     font-family: "roboto-regular";
-    src: url("../polices/Roboto/Roboto-Regular.ttf");
+    src: url("../polices/roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "alpha54";
+    src: url("../polices/alpha54/Alpha54.ttf");
 }
 
 * {
@@ -22,6 +27,12 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
+}
+
+h1 {
+    font-family: 'alpha54';
+    font-size: 3.5em;
+    margin: 10px;
 }
 
 a {

@@ -1,7 +1,11 @@
 /* COULEURS */
 @font-face {
   font-family: "roboto-regular";
-  src: url("../polices/Roboto/Roboto-Regular.ttf");
+  src: url("../polices/roboto/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "alpha54";
+  src: url("../polices/alpha54/Alpha54.ttf");
 }
 * {
   box-sizing: border-box;
@@ -24,6 +28,12 @@ body {
   flex-direction: column;
 }
 
+h1 {
+  font-family: "alpha54";
+  font-size: 3.5em;
+  margin: 10px;
+}
+
 a {
   color: #0000FF;
   text-decoration: none;
@@ -41,6 +51,51 @@ figure {
 
 .centimes {
   font-size: 0.9em;
+}
+
+/* NOSCRIPT */
+noscript {
+  display: flex;
+  background-color: #80C0FF;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+noscript .contenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+noscript .contenu__txt {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0;
+}
+noscript .contenu__lien {
+  display: block;
+  background-color: #FFC080;
+  color: #604000;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 10px 15px;
+  margin: 30px auto 20px auto;
+  border: 5px outset #FF8000;
+  border-radius: 10px;
+}
+noscript .contenu__lien:hover {
+  font-style: normal;
+}
+noscript .contenu__lien:active {
+  border-style: inset;
+}
+noscript .contenu__lien:focus {
+  outline: none;
+  color: #0000FF;
+  border-color: #6060FF;
 }
 
 /* HEADER */
