@@ -8,6 +8,12 @@
     display: none;
     margin: 10px 30px;
     &__table {
+        input {
+            &:focus {
+                border-color: $couleur-bordure-focus;
+                outline: none;
+            }
+        }
         td:first-child {
             text-align: right;
             padding-right: 10px;
@@ -24,17 +30,28 @@
     margin: 10px 30px;
     &__reset {
         display: block;
-        margin: 0 auto 10px auto;
+        margin: 0 auto;
     }
     &__table {
+        margin-top: 20px;
         border-collapse: collapse;
         td {
+            background-color: #B0FFB0;
             padding: 10px;
-            border: 2px solid black;
+            border: 2px solid #000000;
         }
         td:last-child {
+            background-color: transparent;
             padding: 0 0 0 10px;
             border: none;
+        }
+        thead {
+            td {
+                font-size: 1.2em;
+                font-weight: bold;
+                text-align: center;
+                background-color: #80FF80;
+            }
         }
         button {
             display: block;

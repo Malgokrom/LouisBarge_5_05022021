@@ -14,7 +14,7 @@
                     JavaScript est désactivé sur votre navigateur.<br />
                     Pour utiliser notre application, vous devez l'activer.
                 </p>
-                <a href="" class="contenu__lien">Rafraîchir</a>
+                <a href="" class="contenu__lien btn">Rafraîchir</a>
             </div>
         </noscript>
 
@@ -71,12 +71,11 @@ Caractères autorisés : lettre, tiret, espace" required />
                                 <td><input type="email" name="email" id="email" maxlength="128" required /></td>
                             </tr>
                         </table>
-                        <input class="form-commande__btn" type="submit" value="Commander" />
+                        <input class="form-commande__btn btn" type="submit" value="Commander" />
                     </form>
                     <div class="panier">
-                        <button class="panier__reset">Vider le panier</button>
+                        <button class="panier__reset btn">Vider le panier</button>
                         <table class="panier__table">
-                            <caption>Récapitulatif de votre commande</caption>
                             <thead>
                                 <tr>
                                     <td>Produit</td>
@@ -85,7 +84,9 @@ Caractères autorisés : lettre, tiret, espace" required />
                                     <td></td>
                                 </tr>
                             </thead>
-                            <!-- JS : tableau panier avec id, nom, prix, bouton de suppression et total -->
+                            <tbody>
+                                <!-- JS : tableau panier avec id, nom, prix, bouton de suppression et total -->
+                            </tbody>
                         </table>
                         <p class="panier__total">
                             <!-- JS : Prix total de la commande -->

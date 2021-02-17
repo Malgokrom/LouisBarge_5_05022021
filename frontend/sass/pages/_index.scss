@@ -13,18 +13,18 @@ $index-epaisseur-bordure: 5px;
             display: block;
             background-color: #606060;
             width: $index-largeur-image + ($index-epaisseur-bordure * 2);
-            border: $index-epaisseur-bordure solid #404040;
+            border: $index-epaisseur-bordure groove #404040;
             border-radius: 20px;
             box-shadow: 5px 5px 5px #808080;
             overflow: hidden;
             transition: all 300ms;
-            &:hover {
-                background-color: #608060;
-                border-color: #006000;
-                box-shadow: 5px 5px 5px #A0A060;
+            &:hover, &:focus {
+                background-color: #8080FF;
+                border-color: $couleur-bordure-focus;
+                box-shadow: 5px 5px 5px #60A0A0;
+                outline: none;
                 p {
-                    background-color: #C0FFC0;
-                    border-color: #006000;
+                    border-color: $couleur-bordure-focus;
                 }
             }
         }

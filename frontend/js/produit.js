@@ -53,7 +53,7 @@ fetch('http://localhost:3000/api/teddies/' + id).then((data) => {
     
     /* Chargement des images */
     let image_produit = document.getElementById('image-produit');
-    image_produit.innerHTML = '<img src="' + json['imageUrl'] + '" alt="' + json['description'] + '" />';
+    image_produit.innerHTML = '<img src="' + json['imageUrl'] + '" alt="' + json['description'] + '" title="Cliquez pour affichier en mode plein écran" />';
     let image_fullscreen = document.querySelector('.image-fullscreen');
     image_fullscreen.innerHTML += '<img class="image-fullscreen__produit" src="' + json['imageUrl'] + '" alt="' + json['description'] + '" />';
     let image_fullscreen_fermer = document.querySelector('.image-fullscreen__fermer');

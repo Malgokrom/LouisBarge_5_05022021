@@ -28,6 +28,15 @@ $hauteur-icone-fermer: auto;
             padding-right: 10px;
             vertical-align: top;
         }
+        #custom {
+            font-weight: bold;
+            border: 5px groove #808080;
+            padding: 5px;
+            &:focus {
+                border-color: $couleur-bordure-focus;
+                outline: none;
+            }
+        }
         #btn-ajout {
             display: block;
             margin: auto;

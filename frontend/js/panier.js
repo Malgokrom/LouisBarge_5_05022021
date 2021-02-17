@@ -1,7 +1,7 @@
 /* Eléments HTML */
 let panier = document.querySelector('.panier');
 let panier_reset = document.querySelector('.panier__reset');
-let panier_table = document.querySelector('.panier__table');
+let panier_table_tbody = document.querySelector('.panier__table tbody');
 let panier_total = document.querySelector('.panier__total');
 let form_commande = document.querySelector('.form-commande');
 let form_commande_btn = document.querySelector('.form-commande__btn');
@@ -33,12 +33,12 @@ if (localStorage.getItem('panier') !== null) {
             prix_total += liste_prix[i];
             liste_produits[i] = document.createElement('tr');
             liste_produits[i].innerHTML = '<td>' + prod_nom + '</td><td>' + prod_perso + '</td><td>' + formatPrix(prod_prix) + '</td><td><button></button></td>';
-            panier_table.appendChild(liste_produits[i]);
+            panier_table_tbody.appendChild(liste_produits[i]);
 
             /* Suppression d'un élément du panier */
             btn_suppr[i] = liste_produits[i].getElementsByTagName('button')[0];
             btn_suppr[i].addEventListener('click', () => {
-                panier_table.removeChild(liste_produits[i]);
+                panier_table_tbody.removeChild(liste_produits[i]);
                 commande.produits[i] = null;
                 localStorage.setItem('panier', JSON.stringify(commande));
                 prix_total -= liste_prix[i];
