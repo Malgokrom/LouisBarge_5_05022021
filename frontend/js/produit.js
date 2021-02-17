@@ -27,9 +27,21 @@ fetch('http://localhost:3000/api/teddies/' + id).then((data) => {
         couleur = custom.value;
     });
 
+    /* Gestion du bloc de confirmation d'ajout au panier */
+    let confirm_ajout = document.getElementById('confirm-ajout');
+    let confirm_lien = document.querySelector('.confirm-bloc__btns a:nth-child(2)')
+    document.querySelector('.confirm-bloc__titre').innerHTML = json['name'];
+    confirm_lien.addEventListener('click', () => {
+        confirm_ajout.style.display = 'none';
+    });
+
     /* Ajout du produit au panier */
     let btn_ajout = document.getElementById('btn-ajout');
     btn_ajout.addEventListener('click', () => {
+        /* Affichage de la confirmation d'ajout */
+        confirm_ajout.style.display = 'flex';
+
+        /* Ajout dans le localStorage */
         if (localStorage.getItem('panier') === null) {
             localStorage.setItem('panier', '{"produits":[]}');
         }

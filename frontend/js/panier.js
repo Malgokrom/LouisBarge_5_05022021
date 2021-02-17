@@ -64,17 +64,53 @@ if (localStorage.getItem('panier') !== null) {
         panier_total.innerHTML = 'Total: ' + formatPrix(prix_total);
         form_commande.style.display = 'block';
 
+        /* Test de validité des données */
+        let user_prenom = document.getElementById('prenom');
+        let user_nom = document.getElementById('nom');
+        let user_adresse = document.getElementById('adresse');
+        let user_ville = document.getElementById('ville');
+        let user_email = document.getElementById('email');
+        let regex_nom = /^[-a-zA-ZœçàâäéèêëîïôöùûüŷÿŒÇÀÂÄÉÈÊËÎÏÔÖÙÛÜŶŸ\s]{1,64}$/;
+        let regex_adresse = /^[-a-zA-ZœçàâäéèêëîïôöùûüŷÿŒÇÀÂÄÉÈÊËÎÏÔÖÙÛÜŶŸ\d\s]{1,128}$/;
+        let regex_email = /^.+$/; /* A modifier */
+        let couleur_bg_erreur = '#FFFF00';
+        user_prenom.addEventListener('change', () => {
+            if (!regex_nom.test(user_prenom.value)) {
+                user_prenom.style.backgroundColor = couleur_bg_erreur;
+            }
+        });
+        user_nom.addEventListener('change', () => {
+            if (!regex_nom.test(user_nom.value)) {
+                user_nom.style.backgroundColor = couleur_bg_erreur;
+            }
+        });
+        user_adresse.addEventListener('change', () => {
+            if (!regex_adresse.test(user_adresse.value)) {
+                user_adresse.style.backgroundColor = couleur_bg_erreur;
+            }
+        });
+        user_ville.addEventListener('change', () => {
+            if (!regex_nom.test(user_ville.value)) {
+                user_ville.style.backgroundColor = couleur_bg_erreur;
+            }
+        });
+        user_email.addEventListener('change', () => {
+            if (!regex_email.test(user_email.value)) {
+                user_email.style.backgroundColor = couleur_bg_erreur;
+            }
+        });
+
         /* Envoi du formulaire */
         form_commande_btn.addEventListener('click', (e) => {
             e.preventDefault();
             
             /* Objet de contact */
             let user = {
-                firstName: document.getElementById('prenom').value,
-                lastName: document.getElementById('nom').value,
-                address: document.getElementById('adresse').value,
-                city: document.getElementById('ville').value,
-                email: document.getElementById('email').value
+                firstName: user_prenom.value,
+                lastName: user_nom.value,
+                address: user_adresse.value,
+                city: user_ville.value,
+                email: user_email.value
             }
 
             /* Tableau d'ID de produits */

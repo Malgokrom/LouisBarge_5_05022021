@@ -9,9 +9,18 @@
     margin: 10px 30px;
     &__table {
         input {
+            background-color: #FFFFFF;
+            padding: 5px;
+            border: 3px solid #808080;
+            border-radius: 8px;
+            width: 100%;
             &:focus {
                 border-color: $couleur-bordure-focus;
                 outline: none;
+            }
+            &:invalid {
+                outline: none;
+                color: red;
             }
         }
         td:first-child {

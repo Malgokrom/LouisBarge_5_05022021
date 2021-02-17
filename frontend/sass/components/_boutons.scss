@@ -1,9 +1,9 @@
 .btn {
-    background-color: #FFC080;
-    color: #604000;
+    background-color: $couleur-bg-btn;
+    color: $couleur-txt-btn;
     font-weight: bold;
     padding: 8px 15px;
-    border: 5px outset #FF8000;
+    border: 5px outset $couleur-bordure-btn;
     border-radius: 10px;
     cursor: pointer;
     transition: all 300ms;

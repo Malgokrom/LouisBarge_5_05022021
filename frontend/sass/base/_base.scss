@@ -37,14 +37,7 @@ h1 {
 }
 
 a {
-    color: $couleur-lien;
     text-decoration: none;
-    &:hover {
-        font-style: italic;
-    }
-    &:visited {
-        color: $couleur-lien-visited;
-    }
 }
 
 figure {
