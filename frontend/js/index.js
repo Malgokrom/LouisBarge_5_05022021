@@ -1,13 +1,11 @@
 /* Test de l'état de la requête */
 fetch('http://localhost:3000/api/teddies').then((data) => {
-    if (data.status === 200) {
+    if (data.ok) {
         return data.json();
     }
-    throw 'Erreur lors du chargement des données';
-/* Message d'erreur */
+    throw 'Erreur ' + data.status;
 }).catch((erreur) => {
     alert(erreur);
-/* Traitement des données */
 }).then((json) => {
     /* Insertion des produits dans la page */
     let id_prod, img_prod, descrip_prod, nom_prod, prix_prod;

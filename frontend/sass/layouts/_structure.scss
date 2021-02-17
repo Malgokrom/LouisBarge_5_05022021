@@ -77,6 +77,9 @@ header {
                     &:visited {
                         color: $couleur-txt-nav;
                     }
+                    &:focus {
+                        outline: none;
+                    }
                     &:hover {
                         font-style: normal;
                         &::after {

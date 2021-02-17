@@ -4,14 +4,13 @@ let id = url.searchParams.get('id');
 
 /* Test de l'état de la requête */
 fetch('http://localhost:3000/api/teddies/' + id).then((data) => {
-    if (data.status === 200) {
+    if (data.ok) {
         return data.json();
     }
-    throw 'Erreur lors du chargement des données';
-/* Message d'erreur */
+    throw 'Erreur ' + data.status;
 }).catch((erreur) => {
+    document.querySelector('main').innerHTML = '<p>Impossible d\'afficher la page demandée</p>';
     alert(erreur);
-/* Traitement des données */
 }).then((json) => {
     /* Ajout des options de personnalisation */
     let custom = document.getElementById('custom');

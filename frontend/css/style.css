@@ -163,6 +163,9 @@ header nav ul li a {
 header nav ul li a:visited {
   color: #600000;
 }
+header nav ul li a:focus {
+  outline: none;
+}
 header nav ul li a:hover {
   font-style: normal;
 }
@@ -226,9 +229,9 @@ footer p {
   transition: all 300ms;
 }
 #liste-produits .produit a:hover, #liste-produits .produit a:focus {
-  background-color: #8080FF;
-  border-color: #4040FF;
-  box-shadow: 5px 5px 5px #60A0A0;
+  background-color: #6060A0;
+  border-color: #4040C0;
+  box-shadow: 5px 5px 5px #408080;
   outline: none;
 }
 #liste-produits .produit a:hover p, #liste-produits .produit a:focus p {
@@ -295,7 +298,7 @@ footer p {
 }
 .infos-produit__texte #custom {
   font-weight: bold;
-  border: 5px groove #808080;
+  border: 4px groove #808080;
   padding: 5px;
 }
 .infos-produit__texte #custom:focus {
@@ -394,10 +397,6 @@ footer p {
   border-color: #4040FF;
   outline: none;
 }
-.form-commande__table input:invalid {
-  outline: none;
-  color: red;
-}
 .form-commande__table td:first-child {
   text-align: right;
   padding-right: 10px;
@@ -405,6 +404,11 @@ footer p {
 .form-commande__btn {
   display: block;
   margin: 20px auto;
+}
+.form-commande__erreurs {
+  color: #FF0000;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .panier {
